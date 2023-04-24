@@ -5,10 +5,30 @@
 	"version": "0.1.0",
 	"title": "Content Tabs",
 	"category": "widgets",
-	"icon": "smiley",
-	"description": "Example block scaffolded with Create Block tool.",
+	"icon": "welcome-widgets-menus",
+	"keywords": ["Tabs"],
+	"description": "Create Block to showcase content in Tabs",
 	"supports": {
 		"html": false
+	},
+	"attributes": {
+		"tabs": {
+			"type": "array",
+			"default": [
+				{"title": "Tab 1", "content": "Tab 1 content"},
+				{"title": "Tab 2", "content": "Tab 2 content"}
+			]
+		},
+		"layout": {
+			"type": "string",
+			"default": "horizontal"
+		},
+		"tabListFontSize": {
+			"type": "number"
+		},
+		"tabContentFontSize": {
+			"type": "number"
+		}
 	},
 	"textdomain": "content-tabs",
 	"editorScript": "file:./index.js",
