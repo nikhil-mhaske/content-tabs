@@ -4,6 +4,46 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-create-block-content-tabs {
-	border: 1px dotted #f00;
+.tabs {
+	padding: 10px;
+	border: 1px solid #ddd;
+
+	.tabs-list{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+
+		.tabs-tab{
+			cursor: pointer;
+			margin-right: 5px;
+		}
+
+		.tabs-tab:last-child {
+			margin-right: 0;
+		}
+	}
+
+	.tabs-list-vertical{
+		flex-direction: column;
+
+		.tabs-tab-vertical{
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+	}
+
+	.tabs-content-wrapper{
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	.tabs-content{
+		display: none;
+	}
+
+	.tabs-content-active{
+		display: block;
+	}
+
 }

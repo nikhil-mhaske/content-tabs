@@ -1,1 +1,45 @@
-.wp-block-create-block-content-tabs{background-color:#21759b;color:#fff;padding:2px}
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.tabs {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+.tabs .tabs-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.tabs .tabs-list .tabs-tab {
+  cursor: pointer;
+  margin-right: 5px;
+}
+.tabs .tabs-list .tabs-tab:last-child {
+  margin-right: 0;
+}
+.tabs .tabs-list-vertical {
+  flex-direction: column;
+}
+.tabs .tabs-list-vertical .tabs-tab-vertical {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.tabs .tabs-content-wrapper {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.tabs .tabs-content {
+  display: none;
+}
+.tabs .tabs-content-active {
+  display: block;
+}
+
+/*# sourceMappingURL=style-index.css.map*/
