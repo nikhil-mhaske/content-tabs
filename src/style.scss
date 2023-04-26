@@ -5,46 +5,117 @@
  * Replace them with your own styles or remove the file completely.
  */
 
- .tabs {
+.tabs {
+	display: flex;
+	flex-direction: column;
 	padding: 10px;
-	border: 1px solid #ddd;
 
-	.tabs-list{
+	.tabs-list {
 		list-style: none;
 		margin: 0;
 		padding: 0;
 		display: flex;
 
-		.tabs-tab{
+		.add-tab-li {
+			display: flex;
+			align-items: center;
+			padding: 10px;
+
+			.add-tab-button {
+				background-color: limegreen;
+				color: white;
+				border: none;
+				padding: 5px 10px;
+				cursor: pointer;
+			}
+
+			.add-tab-button:hover {
+				background-color: green;
+			}
+		}
+
+		.tabs-tab {
 			cursor: pointer;
-			margin-right: 5px;
 		}
 
-		.tabs-tab:last-child {
-			margin-right: 0;
+		.tab-active {
+			position: relative;
+			border-bottom: 2px solid blue;
+			margin-bottom: -2px;
 		}
+
+		.remove-tab-button {
+			position: absolute;
+			top: 0;
+			right: 0;
+			padding: 0 3px;
+			background-color: red;
+			border: 1px solid red;
+			font-size: 15px;
+			font-weight: 500;
+			color: #fff;
+			cursor: pointer;
+
+			&:hover{
+				transform: scale(1.1);
+			}
+		}
+		
 	}
 
-	.tabs-list-vertical{
+	.tabs-list-vertical {
 		flex-direction: column;
+		width: 20%;
 
-		.tabs-tab-vertical{
-			margin-top: 10px;
-			margin-bottom: 10px;
+		.tab-active {
+			border-bottom: none;
+			border-right: 2px solid blue;
+			margin-right: -2px;
+		}
+		.tabs-tab-vertical {
+			padding: 10px;
 		}
 	}
+	.tab {
+		padding: 10px;
+	}
+	.plaintext-class {
+		background-color: transparent;
+	}
+	
 
-	.tabs-content-wrapper{
-		margin-top: 10px;
-		margin-bottom: 10px;
+	.tabs-content-wrapper {
+		margin: 0;
+		padding: 10px;
+		border-top: 2px solid whitesmoke;
+		width: 100%;
+	}
+	.tabs-content-wrapper-vertical{
+		border-top: none;
+		border-left: 2px solid whitesmoke;
 	}
 
-	.tabs-content{
+	.tabs-content {
 		display: none;
 	}
 
-	.tabs-content-active{
+	.tabs-content-active {
 		display: block;
-	}
+		position: relative;
 
+		.button-destructive {
+			background-color: red;
+			color: white;
+			border: none;
+			padding: 5px 10px;
+			cursor: pointer;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+	}
+}
+
+.tabs-vertical {
+	flex-direction: row;
 }

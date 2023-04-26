@@ -32,14 +32,17 @@
       "default": "horizontal"
     },
     "tabListFontSize": {
-      "type": "number"
+      "type": "number",
+      "default": 16
     },
     "tabContentFontSize": {
-      "type": "number"
+      "type": "number",
+      "default": 12
     }
   },
   "textdomain": "content-tabs",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
-  "style": "file:./style-index.css"
+  "style": "file:./style-index.css",
+  "script": "file:./frontend.js"
 }

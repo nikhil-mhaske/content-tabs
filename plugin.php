@@ -22,5 +22,11 @@
  */
 function create_block_content_tabs_block_init() {
 	register_block_type( __DIR__ . '/build' );
+
+	wp_enqueue_script(
+		'tabs-frontend',
+		plugins_url('src/frontend.js', __FILE__),
+	);
 }
 add_action( 'init', 'create_block_content_tabs_block_init' );
+

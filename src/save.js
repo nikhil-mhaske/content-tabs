@@ -4,8 +4,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { RichText, useBlockProps } from '@wordpress/block-editor';
-import { useState } from "@wordpress/element";
+import { RichText, useBlockProps } from "@wordpress/block-editor";
 
 /**
  * The save function defines the way in which the different attributes should
@@ -16,51 +15,45 @@ import { useState } from "@wordpress/element";
  *
  * @return {WPElement} Element to render.
  */
-export default function save(props) {
 
-	const {attributes} = props;
+
+export default function save({ attributes }) {
 	const { tabs, layout, tabListFontSize, tabContentFontSize } = attributes;
 
-	console.log(props);
-	//ClassNames
+	console.log(attributes);
+	const tabsClass = `tabs${layout === "vertical" ? " tabs-vertical" : ""}`;
 	const tabListClass = `tabs-list${
 		layout === "vertical" ? " tabs-list-vertical" : ""
 	}`;
-	const tabClass = `tabs-tab${
-		layout === "vertical" ? "tabs-tab-vertical" : ""
-	}`;
-	
-	//const [activeTab, setActiveTab] = useState(0);
-	var activeTab=0; //just because above not working
+
+	const tabClass = `tabs-tab tab${
+			layout === "vertical" ? " tabs-tab-vertical" : ""
+		}`;
 
 	return (
-		<div { ...useBlockProps.save() }>
-			<div className='tabs'>
-				<ul className={tabListClass}>
-					{tabs.map((tab,index)=> (
-						<li key={index}
+		<div {...useBlockProps.save()} className={tabsClass}>
+			<ul className={tabListClass}>
+				{tabs.map((tab, index) => (
+					<li
+						key={index}
 						className={tabClass}
-						onClick={() => {
-							console.log("Clicked tab", index);
-							setActiveTab(index);
-						}}>
-							<span>
-								{tab.title}
-							</span>
-						</li>
-					))}
-				</ul>
+						style={{ fontSize: `${tabListFontSize}px` }}
+					>
+						{tab.title}
+					</li>
+				))}
+			</ul>
 
-				<div className='tabs-content-wrapper'>
-					{tabs.map((tab,index)=>(
-						<div key={index}
-						className={`tabs-content${index === activeTab ? " tabs-content-active": ""}`}>
-							<RichText.Content value={tab.content}/>
-							</div>
-					))}
-				</div>
-
-
+			<div className={`tabs-content-wrapper${layout === "vertical" ? " tabs-content-wrapper-vertical" : ""}`}>
+				{tabs.map((tab, index) => (
+					<div
+						key={index}
+						className="tabs-content"
+						style={{ fontSize: `${tabContentFontSize}px` }}
+					>
+						<RichText.Content value={tab.content} />
+					</div>
+				))}
 			</div>
 		</div>
 	);
